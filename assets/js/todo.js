@@ -3,9 +3,9 @@ $("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
 });
 
-$("span").click(function(event){
+$("ul").on("click", "span", function(event){
   // parent refers to the li, not span
-  $(this).parent().fadeOut(2000, function(){
+  $(this).parent().fadeOut(500, function(){
     //remove entire li containing span
     $(this).remove();
   });
@@ -20,6 +20,6 @@ $("input[type='text']").keypress(function(event){
     let todoText = $(this).val();
     $(this).val("");
     //create new li and add to ul using append
-    $("ul").append("<li><span>X </span>" + todoText + "</li>");
+    $("ul").append("<li><span><i class='fa fa-trash'></i></span>" + todoText + "</li>");
   }
 });
